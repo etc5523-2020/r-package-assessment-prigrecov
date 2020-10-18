@@ -17,9 +17,12 @@ world data and its analysis.
 The development version can be installed from from
 [GitHub](https://github.com/) with:
 
-`r # install.packages("devtools")
-devtools::install_github("etc5523-2020/r-package-assessment-prigrecov")`v
-\#\# Example
+``` r
+# install.packages("devtools")
+devtools::install_github("etc5523-2020/r-package-assessment-prigrecov")
+```
+
+## Example
 
 This is a basic example of how to install this package:
 

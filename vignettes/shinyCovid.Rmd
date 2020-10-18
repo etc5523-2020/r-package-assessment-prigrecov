@@ -1,0 +1,21 @@
+---
+title: "COVID-19 Shiny APP"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{COVID-19 Shiny APP}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(yourPkg)
+```
+
+This package provides the code and input data for an interactive Shiny web application which allows users to explore data related to COVID-19 across the World. The application was built with R-package using the `shiny` framework.
