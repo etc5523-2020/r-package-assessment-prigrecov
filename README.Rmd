@@ -33,6 +33,7 @@ devtools::install_github("etc5523-2020/r-package-assessment-prigrecov")
 
 This is a basic example of how to install this package:
 
-```{r example}
+```
 library(yourPkg)
+launch_app()
 ```
