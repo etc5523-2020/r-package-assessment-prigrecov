@@ -34,4 +34,6 @@ This is a basic example of how to install this package:
 
 ```{r example}
 library(yourPkg)
+library(tibble)
+covidData
 ```
