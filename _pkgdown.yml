@@ -1,0 +1,12 @@
+template:
+  params:
+    bootswatch: flatly
+
+navbar:
+  structure:
+    left: [help]
+  components:
+    home: ~
+    help:
+      text: Get Started
+      href: articles/shinyCovid.html
