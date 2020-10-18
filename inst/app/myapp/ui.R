@@ -52,12 +52,7 @@ navbarPage("COVID-19 ACROSS THE WORLD",
            
            tabPanel("Overall World Data",
                     
-                    # Displaying the Instruction box for tab 1
-                    wellPanel(
-                    fluidRow(
-                        box(title = "Instructions", width = 11, 
-                            htmlOutput("text0"))
-                      )),
+                    text_box("text0"),
                     
                     # Displaying the action buttons and its own instruction  
                     textOutput("text1"),
@@ -76,12 +71,7 @@ navbarPage("COVID-19 ACROSS THE WORLD",
            
            tabPanel("Data by Continent and Country",
                     
-                    # Displaying the Instruction box for tab 2
-                    wellPanel(
-                    fluidRow(
-                      box(title = "Instructions", width = 12, 
-                          htmlOutput("text4"))
-                    )),
+                    text_box("text4"),
                     
                     br(),
                     
