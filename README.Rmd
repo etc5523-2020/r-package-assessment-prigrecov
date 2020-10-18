@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # yourPkg
 
 <!-- badges: start -->
+[![R build status](https://github.com/etc5523-2020/r-package-assessment-prigrecov/workflows/R-CMD-check/badge.svg)](https://github.com/etc5523-2020/r-package-assessment-prigrecov/actions)
 <!-- badges: end -->
 
 The goal of yourPkg is to embedding a Shiny application about COVID-19 world data and its analysis.
@@ -27,13 +28,11 @@ The development version can be installed from from [GitHub](https://github.com/)
 ``` r
 # install.packages("devtools")
 devtools::install_github("etc5523-2020/r-package-assessment-prigrecov")
-```
+```v
 ## Example
 
 This is a basic example of how to install this package:
 
 ```{r example}
 library(yourPkg)
-library(tibble)
-covidData
 ```
