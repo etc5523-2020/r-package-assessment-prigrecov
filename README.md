@@ -7,11 +7,13 @@
 
 <!-- badges: end -->
 
-The goal of yourPkg is to …
+The goal of yourPkg is to embedding a Shiny application about COVID-19
+world data and its analysis.
 
 ## Installation
 
-And the development version from [GitHub](https://github.com/) with:
+The development version can be installed from from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -20,7 +22,7 @@ devtools::install_github("etc5523-2020/r-package-assessment-prigrecov")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example of how to install this package:
 
 ``` r
 library(yourPkg)
