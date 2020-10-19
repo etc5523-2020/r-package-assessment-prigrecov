@@ -10,10 +10,19 @@
 #' data-pos(covidData, Date, continent)
 #' 
 #' @export
-data_chart <- function(dataset, group_byparameter1, group_byparameter2) {
+data_chart <- function(dataset, group_byparameter) {
+  
+  char_count <- nchar(group_byparameter)
+  n_input <- length(group_byparameter)
+  
+  stopifnot(
+    char_count > 0,
+    n_input > 0
+  )
+  
   dataset <- dataset %>%
     filter(Date >= '2020-02-01') %>%
-    group_by(get(group_byparameter1), get(group_byparameter2)) %>%
+    group_by(Date, get(group_byparameter)) %>%
     summarize(Cumulative_Cases = sum(total_cases),
               Cumulative_Deaths = sum(total_deaths),
               Daily_Cases = sum(new_cases),
@@ -24,7 +33,7 @@ data_chart <- function(dataset, group_byparameter1, group_byparameter2) {
     filter(!is.na(Cumulative_Cases)) %>%
     filter(!is.na(Cumulative_Deaths))
   
-  dataset <- setNames(dataset, c("Date", group_byparameter2,"Cumulative Cases", 
+  dataset <- setNames(dataset, c("Date", group_byparameter,"Cumulative Cases", 
                                  "Cumulative Deaths", "Daily Cases", "Daily Cases smoothed", 
                                  "Daily Deaths", "Daily Deaths smoothed"))
   

@@ -71,7 +71,7 @@ data1 <- covidData %>%
 
 data2 <- covidData %>% filter(continent != "")
 
-data2 <- data_chart(dataset=data2, group_byparameter1="Date", group_byparameter2="continent") 
+data2 <- data_chart(dataset=data2,  group_byparameter="continent") 
 
 # preparing data for plot3
 # data3 <- covidData %>%
@@ -91,12 +91,12 @@ data2 <- data_chart(dataset=data2, group_byparameter1="Date", group_byparameter2
 #                            "Cumulative Deaths", "Daily Cases", "Daily Cases smoothed", 
 #                            "Daily Deaths", "Daily Deaths smoothed"))
 
-data3 <- data_chart(covidData, group_byparameter1="Date", group_byparameter2="location")
+data3 <- data_chart(covidData, group_byparameter="location")
 
 # preparing data for table1
 data_table1 = covidData[,c("location","Date","total_cases", "new_cases", 
-                            "total_deaths", "new_deaths", 
-                            "total_tests", "new_tests")] 
+                           "total_deaths", "new_deaths", 
+                           "total_tests", "new_tests")] 
 
 data_table1 = data_table1 %>% filter(location != "International")
 
@@ -286,13 +286,13 @@ function(input, output, session) {
             config(displayModeBar = F)
     })
     
-   
+    
     output$plot3 <- renderPlotly({
         
         data3b <- data3 %>% filter(location == input$country)
         data3b$qty <- unlist(data3b[input$statistic])
         graph_Country <- ggplot(data = data3b, 
-                                  aes(x = Date, y = qty))+
+                                aes(x = Date, y = qty))+
             geom_col(fill="skyblue3") +
             xlab("") +
             ylab("") +
@@ -346,7 +346,7 @@ function(input, output, session) {
                 Maximum1 = comma(round(max(new_cases, na.rm=TRUE),0)),
                 Average2 = comma(round(mean(new_deaths, na.rm=TRUE),0)),
                 Maximum2 = comma(round(max(new_deaths, na.rm=TRUE),0)),
-                ) %>%
+            ) %>%
             knitr::kable("html", align = "lrrrr", booktabs = TRUE,
                          caption = paste("Summary COVID-19 Data for", toupper(input$country), "(Dec/19 - Sep/20)")) %>%
             kable_styling(full_width = T,) %>%
@@ -396,12 +396,7 @@ function(input, output, session) {
               '<br>',
               'For any question or feedback, you can either open an <a href="https://github.com/etc5523-2020/shiny-assessment-prigrecov/issues">issue</a> 
               or contact me by email: pgre0007@student.monash.edu'
-              )
+        )
         
     })
 }
-
-
-
-
-

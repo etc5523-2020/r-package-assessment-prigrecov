@@ -4,7 +4,7 @@
 \alias{data_chart}
 \title{Data processing for charts}
 \usage{
-data_chart(dataset, group_byparameter1, group_byparameter2)
+data_chart(dataset, group_byparameter)
 }
 \arguments{
 \item{dataset}{This is the dataset to be processed}
