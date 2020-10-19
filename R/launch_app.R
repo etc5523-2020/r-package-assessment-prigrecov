@@ -1,7 +1,12 @@
-#' Shiny APP embedding function
+#' Shiny APP launch function
 #' 
 #' @return Shiny APP launched
 #' 
+#' @examples
+#' \dontrun{
+#' launch_app()
+#' }
+#'
 #' @export
 launch_app <- function() {
   appDir <- system.file("app", "myapp", package = "shinyCovidWorld")

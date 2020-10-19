@@ -2,7 +2,7 @@
 % Please edit documentation in R/launch_app.R
 \name{launch_app}
 \alias{launch_app}
-\title{Shiny APP embedding function}
+\title{Shiny APP launch function}
 \usage{
 launch_app()
 }
@@ -10,5 +10,11 @@ launch_app()
 Shiny APP launched
 }
 \description{
-Shiny APP embedding function
+Shiny APP launch function
+}
+\examples{
+\dontrun{
+launch_app()
+}
+
 }
