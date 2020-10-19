@@ -9,6 +9,15 @@
 #' 
 #' @export
 text_box <- function(text) {
+  
+  char_count <- nchar(text)
+  n_input <- length(text)
+  
+  stopifnot(
+    char_count > 0,
+    n_input > 0
+  )
+  
   wellPanel(
     fluidRow(
       box(title = "Instructions", width = 11, 
