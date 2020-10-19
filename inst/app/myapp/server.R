@@ -30,15 +30,8 @@ library(shinydashboard)
 
 # COVID data ----------------------------------------------------
 
-# # loading the dataset
-# covid_data <- read.csv("owid-covid-data.csv")
-# 
-# # formatting data
-# covid_data$Date <- as.Date(covid_data$date)
-# covid_data$Month <- months(covid_data$Date)
-# covid_data$Month = factor(covid_data$Month, levels=c('December','January','February','March',
-#                                                      'April','May','June','July','August',
-#                                                      'September'))
+# loading the dataset
+                                              
 # preparing data for plot1
 data1 <- covidData %>%
     filter(location == "World") %>%
@@ -51,46 +44,10 @@ data1 <- covidData %>%
 
 
 # preparing data for plot2
-# data2 <- covidData %>%
-#     filter(continent != "") %>%
-#     filter(Date >= '2020-02-01') %>%
-#     group_by(Date, continent) %>%
-#     summarize(Cumulative_Cases = sum(total_cases),
-#               Cumulative_Deaths = sum(total_deaths),
-#               Daily_Cases = sum(new_cases),
-#               Daily_Cases_smoothed = sum(new_cases_smoothed),
-#               Daily_Deaths = sum(new_deaths),
-#               Daily_Deaths_smoothed = sum(new_deaths_smoothed),
-#               .groups = 'drop') %>%
-#     filter(!is.na(Cumulative_Cases)) %>%
-#     filter(!is.na(Cumulative_Deaths)) 
-# 
-# data2 <- setNames(data2, c("Date","Continent","Cumulative Cases", 
-#                            "Cumulative Deaths", "Daily Cases", "Daily Cases smoothed", 
-#                            "Daily Deaths", "Daily Deaths smoothed"))
-
 data2 <- covidData %>% filter(continent != "")
-
 data2 <- data_chart(dataset=data2,  group_byparameter="continent") 
 
 # preparing data for plot3
-# data3 <- covidData %>%
-#     filter(Date >= '2020-02-01') %>%
-#     group_by(Date, location) %>%
-#     summarize(Cumulative_Cases = sum(total_cases),
-#               Cumulative_Deaths = sum(total_deaths),
-#               Daily_Cases = sum(new_cases),
-#               Daily_Cases_smoothed = sum(new_cases_smoothed),
-#               Daily_Deaths = sum(new_deaths),
-#               Daily_Deaths_smoothed = sum(new_deaths_smoothed),
-#               .groups = 'drop') %>%
-#     filter(!is.na(Cumulative_Cases)) %>%
-#     filter(!is.na(Cumulative_Deaths)) 
-# 
-# data3 <- setNames(data3, c("Date","location","Cumulative Cases", 
-#                            "Cumulative Deaths", "Daily Cases", "Daily Cases smoothed", 
-#                            "Daily Deaths", "Daily Deaths smoothed"))
-
 data3 <- data_chart(covidData, group_byparameter="location")
 
 # preparing data for table1
@@ -108,6 +65,7 @@ function(input, output, session) {
     
     ### TAB 1 - Overall World Data
     
+    # instructions text
     output$text0 <- renderText({
         paste("By the buttons, the user can choose if she wants to 
               see the <i>global</i> <b>COVID-19 positive cases</b> data or the <b>COVID-19 
@@ -121,10 +79,12 @@ function(input, output, session) {
               the evolution of <b>averages</b> and <b>dispersion/variance</b> of the selected data.</li>")
     })
     
+    # text for buttons
     output$text1 <- renderText({
         paste("Click on which data do you want to visualize in graphs below:")
     })
     
+    # plot 1 code
     output$plot1 <- renderPlotly({
         graph_world1 <- data1 %>%
             plot_ly() %>%
@@ -145,6 +105,7 @@ function(input, output, session) {
             config(displayModeBar = F)
     })
     
+    # plot 2 code
     output$plot1B <- renderPlot({
         covid_data_world <- covidData %>%
             filter(location == "World") %>%
@@ -240,7 +201,7 @@ function(input, output, session) {
         
     })
     
-    
+    # event_data() code for plot 1
     output$click <- renderPrint({
         d <- event_data("plotly_click")
         if (is.null(d)) return("Click a point in line or bar of the graph above to see the values here.") else print(d,row.names = FALSE)
@@ -249,6 +210,7 @@ function(input, output, session) {
     
     ### TAB 2 - Data by Continent and Country
     
+    # instructions text
     output$text4 <- renderText({
         paste("In this panel, the data is displayed by <b>Continent</b> <i>(Graph 2)</i> and by <b>Country</b> <i>(Graph 3 and Tables 1 and 2)</i>.", 
               "<br>", 
@@ -267,6 +229,7 @@ function(input, output, session) {
               and the maximum levels achieved on the month — a summary view of average and maximum recordings evolution over the months, for each country</li>")
     })
     
+    # plot 2 code
     output$plot2 <- renderPlotly({
         data2$qty <- unlist(data2[input$statistic])
         graph_Continent <- ggplot(data = data2, 
@@ -287,6 +250,7 @@ function(input, output, session) {
     })
     
     
+    # plot 3 code
     output$plot3 <- renderPlotly({
         
         data3b <- data3 %>% filter(location == input$country)
@@ -309,11 +273,13 @@ function(input, output, session) {
     })
     
     
+    # title text for table 1
     output$text3 <- renderText({
         paste("TABLE 1: Analytical daily data by Country")
     })
     
     
+    # table1 code
     output$table1 <- renderDataTable({
         data_table1B <- data_table1 %>% filter(location == input$country)
         datatable(data_table1B[,-1],
@@ -329,10 +295,12 @@ function(input, output, session) {
                            currency = "", interval = 3, mark = ",", digits = 0)
     })
     
+    # title text for table 2
     output$text2 <- renderText({
         paste("TABLE 2: Summary of Monthly Statistics by Country")
     })
     
+    # table2 code
     output$table2 <- function() {
         req(input$country)
         cols <- c('Month', 'new_cases', 'new_deaths')
@@ -356,6 +324,7 @@ function(input, output, session) {
     
     ### TAB 3 - About
     
+    # about text
     output$about <- renderText({
         paste('<b>AUTHOR:</b>',
               '<br>',

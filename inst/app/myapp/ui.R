@@ -30,12 +30,7 @@ library(shinydashboard)
 
 # COVID data ----------------------------------------------------
 
-# # loading the dataset
-# covid_data <- read.csv("owid-covid-data.csv")
-# 
-# # formatting data
-# covid_data$Date <- as.Date(covid_data$date)
-# covid_data$Month <- months(covid_data$Date)
+# loading the dataset
 
 # preparing data for table1
 data_table1 = covidData[,c("location","Date","total_cases", "new_cases", 
@@ -50,8 +45,10 @@ data_table1 = data_table1 %>% filter(location != "International")
 navbarPage("COVID-19 ACROSS THE WORLD",
            theme = shinythemes::shinytheme("flatly"),
            
+           # 1st TAB
            tabPanel("Overall World Data",
                     
+                    # Instruction box tab 1
                     text_box("text0"),
                     
                     # Displaying the action buttons and its own instruction  
@@ -69,8 +66,10 @@ navbarPage("COVID-19 ACROSS THE WORLD",
                     plotOutput("plot1B")
                     ),
            
+           # 2nd TAB
            tabPanel("Data by Continent and Country",
                     
+                    # Instruction box tab 2
                     text_box("text4"),
                     
                     br(),
