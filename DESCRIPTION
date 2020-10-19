@@ -1,12 +1,12 @@
 Package: yourPkg
-Title: What the Package Does (One Line, Title Case)
+Title: Shiny Covid-19 Application Launching
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Priscila",
            family = "Grecov",
            role = c("aut", "cre"),
            email = "pgre0007@student.monash.edu")
-Description: What the package does (one paragraph)
+Description: This package launches a Shiny dashboard application that contains the data visualisation and exploration of global COVID-19 pandemic data.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

@@ -51,41 +51,47 @@ data1 <- covidData %>%
 
 
 # preparing data for plot2
-data2 <- covidData %>%
-    filter(continent != "") %>%
-    filter(Date >= '2020-02-01') %>%
-    group_by(Date, continent) %>%
-    summarize(Cumulative_Cases = sum(total_cases),
-              Cumulative_Deaths = sum(total_deaths),
-              Daily_Cases = sum(new_cases),
-              Daily_Cases_smoothed = sum(new_cases_smoothed),
-              Daily_Deaths = sum(new_deaths),
-              Daily_Deaths_smoothed = sum(new_deaths_smoothed),
-              .groups = 'drop') %>%
-    filter(!is.na(Cumulative_Cases)) %>%
-    filter(!is.na(Cumulative_Deaths)) 
+# data2 <- covidData %>%
+#     filter(continent != "") %>%
+#     filter(Date >= '2020-02-01') %>%
+#     group_by(Date, continent) %>%
+#     summarize(Cumulative_Cases = sum(total_cases),
+#               Cumulative_Deaths = sum(total_deaths),
+#               Daily_Cases = sum(new_cases),
+#               Daily_Cases_smoothed = sum(new_cases_smoothed),
+#               Daily_Deaths = sum(new_deaths),
+#               Daily_Deaths_smoothed = sum(new_deaths_smoothed),
+#               .groups = 'drop') %>%
+#     filter(!is.na(Cumulative_Cases)) %>%
+#     filter(!is.na(Cumulative_Deaths)) 
+# 
+# data2 <- setNames(data2, c("Date","Continent","Cumulative Cases", 
+#                            "Cumulative Deaths", "Daily Cases", "Daily Cases smoothed", 
+#                            "Daily Deaths", "Daily Deaths smoothed"))
 
-data2 <- setNames(data2, c("Date","Continent","Cumulative Cases", 
-                           "Cumulative Deaths", "Daily Cases", "Daily Cases smoothed", 
-                           "Daily Deaths", "Daily Deaths smoothed"))
+data2 <- covidData %>% filter(continent != "")
+
+data2 <- data_chart(dataset=data2, group_byparameter1="Date", group_byparameter2="continent") 
 
 # preparing data for plot3
-data3 <- covidData %>%
-    filter(Date >= '2020-02-01') %>%
-    group_by(Date, location) %>%
-    summarize(Cumulative_Cases = sum(total_cases),
-              Cumulative_Deaths = sum(total_deaths),
-              Daily_Cases = sum(new_cases),
-              Daily_Cases_smoothed = sum(new_cases_smoothed),
-              Daily_Deaths = sum(new_deaths),
-              Daily_Deaths_smoothed = sum(new_deaths_smoothed),
-              .groups = 'drop') %>%
-    filter(!is.na(Cumulative_Cases)) %>%
-    filter(!is.na(Cumulative_Deaths)) 
+# data3 <- covidData %>%
+#     filter(Date >= '2020-02-01') %>%
+#     group_by(Date, location) %>%
+#     summarize(Cumulative_Cases = sum(total_cases),
+#               Cumulative_Deaths = sum(total_deaths),
+#               Daily_Cases = sum(new_cases),
+#               Daily_Cases_smoothed = sum(new_cases_smoothed),
+#               Daily_Deaths = sum(new_deaths),
+#               Daily_Deaths_smoothed = sum(new_deaths_smoothed),
+#               .groups = 'drop') %>%
+#     filter(!is.na(Cumulative_Cases)) %>%
+#     filter(!is.na(Cumulative_Deaths)) 
+# 
+# data3 <- setNames(data3, c("Date","location","Cumulative Cases", 
+#                            "Cumulative Deaths", "Daily Cases", "Daily Cases smoothed", 
+#                            "Daily Deaths", "Daily Deaths smoothed"))
 
-data3 <- setNames(data3, c("Date","location","Cumulative Cases", 
-                           "Cumulative Deaths", "Daily Cases", "Daily Cases smoothed", 
-                           "Daily Deaths", "Daily Deaths smoothed"))
+data3 <- data_chart(covidData, group_byparameter1="Date", group_byparameter2="location")
 
 # preparing data for table1
 data_table1 = covidData[,c("location","Date","total_cases", "new_cases", 
@@ -265,7 +271,7 @@ function(input, output, session) {
         data2$qty <- unlist(data2[input$statistic])
         graph_Continent <- ggplot(data = data2, 
                                   aes(x = Date, y = qty))+
-            geom_line(aes(color=Continent))+
+            geom_line(aes(color=continent))+
             xlab("") +
             ylab("") +
             scale_x_date(date_labels = "%d-%m", date_breaks  ="10 days", limits = as.Date(c('2020-02-01','2020-09-30'))) +
