@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# yourPkg
+# shinyCovidWorld
 
 <!-- badges: start -->
 
@@ -9,8 +9,8 @@
 status](https://github.com/etc5523-2020/r-package-assessment-prigrecov/workflows/R-CMD-check/badge.svg)](https://github.com/etc5523-2020/r-package-assessment-prigrecov/actions)
 <!-- badges: end -->
 
-The goal of yourPkg is to embedding a Shiny application about COVID-19
-world data and its analysis.
+The goal of shinyCovidWorld is to embedding a Shiny application about
+COVID-19 world data and its analysis.
 
 ## Installation
 
@@ -26,5 +26,5 @@ devtools::install_github("etc5523-2020/r-package-assessment-prigrecov")
 
 This is a basic example of how to install this package:
 
-    library(yourPkg)
+    library(shinyCovidWorld)
     launch_app()

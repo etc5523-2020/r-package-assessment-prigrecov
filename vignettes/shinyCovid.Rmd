@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(yourPkg)
+library(shinyCovidWorld)
 ```
 
 This package provides the code and input data for an interactive Shiny web application which allows users to explore data related to COVID-19 across the World. The application was built with R-package using the `shiny` framework.

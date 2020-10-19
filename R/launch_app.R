@@ -4,9 +4,9 @@
 #' 
 #' @export
 launch_app <- function() {
-  appDir <- system.file("app", "myapp", package = "yourPkg")
+  appDir <- system.file("app", "myapp", package = "shinyCovidWorld")
   if (appDir == "") {
-    stop("Could not find example directory. Try re-installing `yourPkg`.", call. = FALSE)
+    stop("Could not find example directory. Try re-installing `shinyCovidWorld`.", call. = FALSE)
   }
   
   shiny::runApp(appDir, display.mode = "normal")
