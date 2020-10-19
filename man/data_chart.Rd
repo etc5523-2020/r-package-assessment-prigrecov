@@ -4,14 +4,12 @@
 \alias{data_chart}
 \title{Data processing for charts}
 \usage{
-data_chart(dataset, group_byparameter)
+data_chart(dataset = covidData, group_byparameter)
 }
 \arguments{
 \item{dataset}{This is the dataset to be processed}
 
-\item{group_byparameter1}{This is the 1st parameter of groupby() function}
-
-\item{group_byparameter2}{This is the 2nd parameter of groupby() function}
+\item{group_byparameter}{This is the 1st parameter of groupby() function}
 }
 \value{
 The dataset processed to be used to plot the chart

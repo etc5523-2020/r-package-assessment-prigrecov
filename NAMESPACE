@@ -3,3 +3,6 @@
 export(data_chart)
 export(launch_app)
 export(text_box)
+import(dplyr)
+import(shiny)
+import(shinydashboard)

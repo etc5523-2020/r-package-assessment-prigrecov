@@ -1,16 +1,14 @@
 #' Data processing for charts
 #'
 #' @param dataset This is the dataset to be processed
-#' @param group_byparameter1 This is the 1st parameter of groupby() function
-#' @param group_byparameter2 This is the 2nd parameter of groupby() function
+#' @param group_byparameter This is the 1st parameter of groupby() function
 #'
 #' @return The dataset processed to be used to plot the chart 
 #'
-#' @example
-#' data-pos(covidData, Date, continent)
+#' @import dplyr
 #' 
 #' @export
-data_chart <- function(dataset, group_byparameter) {
+data_chart <- function(dataset=covidData, group_byparameter) {
   
   char_count <- nchar(group_byparameter)
   n_input <- length(group_byparameter)

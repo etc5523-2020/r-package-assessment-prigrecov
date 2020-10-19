@@ -3,9 +3,9 @@
 #' @param text text id 
 #'
 #' @return Box with instructions text set in the server code
-#'
-#' @example
-#' text_box(text0)
+#' 
+#' @import shiny
+#' @import shinydashboard
 #' 
 #' @export
 text_box <- function(text) {

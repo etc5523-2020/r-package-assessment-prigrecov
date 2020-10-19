@@ -1,4 +1,4 @@
-test_that("Input column", {
+test_that("InputColumn", {
   res <- data_chart(covidData, group_byparameter="location")
   expect_error(data_chart(dataset = NULL))
   expect_error(data_chart(group_byparameter = NULL))
@@ -11,7 +11,7 @@ test_that("Input column", {
   expect_error(data_chart(group_byparameter %nin% c("location","continent")))
 })
 
-test_that("Output DF", {
+test_that("OutputDF", {
   res <- data_chart(covidData,group_byparameter="location")
   expect_true(class(res)[3] == "data.frame")
 })

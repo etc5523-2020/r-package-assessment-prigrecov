@@ -2,9 +2,6 @@
 #' 
 #' @return Shiny APP launched
 #' 
-#' @example 
-#' yourPkg::launch_app()
-#' 
 #' @export
 launch_app <- function() {
   appDir <- system.file("app", "myapp", package = "yourPkg")
