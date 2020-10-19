@@ -10,7 +10,7 @@ launch_app()
 Shiny APP launched
 }
 \description{
-Shiny APP launch function
+This function launchs the shiny app for the user
 }
 \examples{
 \dontrun{

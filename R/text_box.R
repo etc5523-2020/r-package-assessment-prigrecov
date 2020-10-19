@@ -1,11 +1,17 @@
 #' Text box instructions function
+#' 
+#' @description This function gives you a box in the wellPanel with text inside 
+#' 
+#' @param text This is the text id for the text to be written inside the box
 #'
-#' @param text text id 
-#'
-#' @return Box with instructions text set in the server code
+#' @return Box with instructions text inside to be set in the server logic unit
 #' 
 #' @import shiny
 #' @import shinydashboard
+#' 
+#' @examples  
+#' text = "text0"
+#' text_box(text)
 #' 
 #' @export
 text_box <- function(text) {

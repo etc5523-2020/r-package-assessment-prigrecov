@@ -1,5 +1,7 @@
 #' Shiny APP launch function
 #' 
+#' @description This function launchs the shiny app for the user
+#' 
 #' @return Shiny APP launched
 #' 
 #' @examples

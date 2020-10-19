@@ -7,11 +7,17 @@
 text_box(text)
 }
 \arguments{
-\item{text}{text id}
+\item{text}{This is the text id for the text to be written inside the box}
 }
 \value{
-Box with instructions text set in the server code
+Box with instructions text inside to be set in the server logic unit
 }
 \description{
-Text box instructions function
+This function gives you a box in the wellPanel with text inside
+}
+\examples{
+ 
+text = "text0"
+text_box(text)
+
 }
