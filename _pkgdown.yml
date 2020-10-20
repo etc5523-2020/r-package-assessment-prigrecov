@@ -10,7 +10,7 @@ navbar:
     home: ~
     help:
       text: Get Started
-      href: articles/shinyCovid.html
+      href: articles/shinyCovidWorld.html
     github:
       icon: fa-github fa-lg
       href: https://etc5523-2020.github.io/r-package-assessment-prigrecov/
