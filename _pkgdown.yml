@@ -9,8 +9,9 @@ navbar:
   components:
     home: ~
     help:
-      text: Get Started
-      href: articles/shinyCovidWorld.html
+      text: Get started
+      href: articles/shinyCovidPckg.html
     github:
       icon: fa-github fa-lg
-      href: https://etc5523-2020.github.io/r-package-assessment-prigrecov/
+      href: https://github.com/etc5523-2020/r-package-assessment-prigrecov
+      
