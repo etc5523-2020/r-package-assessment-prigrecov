@@ -3,7 +3,7 @@ globalVariables(c("covidData","Date","total_cases","total_deaths","new_cases", "
 
 #' Data processing for charts
 #'
-#' @description This function prepares the dataset with some filters, groupings and summarizing to be used into plotting codes.
+#' @description This function prepares the dataset with some filterings, groupings and summarizings to be used into plotting codes of the application.
 #'
 #' @param dataset This is the dataset to be processed
 #' @param group_byparameter This is the column of the dataset to be used inside of groupby() function together with the column "Date"

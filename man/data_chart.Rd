@@ -15,7 +15,7 @@ data_chart(dataset = covidData, group_byparameter)
 The dataset processed to be used to plot the chart
 }
 \description{
-This function prepares the dataset with some filters, groupings and summarizing to be used into plotting codes.
+This function prepares the dataset with some filterings, groupings and summarizings to be used into plotting codes of the application.
 }
 \examples{
 data_chart(dataset=covidData, group_byparameter="location")

@@ -1,8 +1,8 @@
 #' Our World in Data's COVID-19 dataset
 #'
-#' A dataset containing  a collection of the COVID-19 data maintained by Our World in Data. 
-#' It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other variables of potential interest.
-#' Despite of all variables avaible in this dataset, we are using only some one of them for the COVID-19 dashboard, that one which refer to cases, deaths and tests statistic measures.
+#' A dataset containing a collection of the COVID-19 data maintained by Our World in Data.  
+#'  
+#' It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other social and economic variables of potential interest, for all countries across the world.
 #'
 #' @format a data frame with 47116 observations and 43 variables:
 #'
@@ -47,7 +47,7 @@
 #' - **hospital_beds_per_thousand**:	Hospital beds per 1,000 people, most recent year available since 2010	OECD, Eurostat, World Bank, national government records and other sources
 #' - **life_expectancy**:	Life expectancy at birth in 2019	James C. Riley, Clio Infra, United Nations Population Division
 #' - **human_development_index**:	Summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living#'
-#'
-#'@source [Our World in Data](https://github.com/owid/covid-19-data/tree/master/public/data)  
+#' 
+#' @source [Our World in Data](https://github.com/owid/covid-19-data/tree/master/public/data)  
 "covidData"
 

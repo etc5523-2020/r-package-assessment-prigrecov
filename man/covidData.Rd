@@ -57,8 +57,8 @@ a data frame with 47116 observations and 43 variables:
 covidData
 }
 \description{
-A dataset containing  a collection of the COVID-19 data maintained by Our World in Data.
-It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other variables of potential interest.
-Despite of all variables avaible in this dataset, we are using only some one of them for the COVID-19 dashboard, that one which refer to cases, deaths and tests statistic measures.
+A dataset containing a collection of the COVID-19 data maintained by Our World in Data.
+
+It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other social and economic variables of potential interest, for all countries across the world.
 }
 \keyword{datasets}

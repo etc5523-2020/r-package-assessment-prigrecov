@@ -31,4 +31,5 @@ Imports:
     kableExtra,
     ggridges,
     viridis,
-    shinydashboard
+    shinydashboard,
+    tibble
