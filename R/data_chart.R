@@ -1,5 +1,8 @@
+globalVariables(c("covidData","Date","total_cases","total_deaths","new_cases", "new_cases_smoothed","new_deaths","new_deaths_smoothed",
+                  "Cumulative_Cases", "Cumulative_Deaths"))
+
 #' Data processing for charts
-#' 
+#'
 #' @description This function prepares the dataset with some filters, groupings and summarizing to be used into plotting codes.
 #'
 #' @param dataset This is the dataset to be processed
@@ -36,7 +39,7 @@ data_chart <- function(dataset=covidData, group_byparameter) {
     filter(!is.na(Cumulative_Cases)) %>%
     filter(!is.na(Cumulative_Deaths))
   
-  dataset <- setNames(dataset, c("Date", group_byparameter,"Cumulative Cases", 
+  dataset <- stats::setNames(dataset, c("Date", group_byparameter,"Cumulative Cases", 
                                  "Cumulative Deaths", "Daily Cases", "Daily Cases smoothed", 
                                  "Daily Deaths", "Daily Deaths smoothed"))
   
