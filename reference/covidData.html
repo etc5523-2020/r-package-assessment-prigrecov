@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our World in Data's Covid Data — covidData • shinyCovidWorld</title>
+<title>Our World in Data's COVID-19 dataset — covidData • shinyCovidWorld</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,10 @@
 
 
 
-<meta property="og:title" content="Our World in Data's Covid Data — covidData" />
-<meta property="og:description" content="A dataset containing crop yields for countries over time. Yields   TODO
-are measured in tonnes per hectare for seven crops.                TODO" />
+<meta property="og:title" content="Our World in Data's COVID-19 dataset — covidData" />
+<meta property="og:description" content="A dataset containing  a collection of the COVID-19 data maintained by Our World in Data.
+It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other variables of potential interest.
+Despite of all variables avaible in this dataset, we are using only some one of them for the COVID-19 dashboard, that one which refer to cases, deaths and tests statistic measures." />
 
 
 
@@ -118,14 +119,15 @@ are measured in tonnes per hectare for seven crops.                TODO" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Our World in Data's Covid Data</h1>
+    <h1>Our World in Data's COVID-19 dataset</h1>
     
     <div class="hidden name"><code>covidData.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A dataset containing crop yields for countries over time. Yields   TODO
-are measured in tonnes per hectare for seven crops.                TODO</p>
+    <p>A dataset containing  a collection of the COVID-19 data maintained by Our World in Data.
+It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other variables of potential interest.
+Despite of all variables avaible in this dataset, we are using only some one of them for the COVID-19 dashboard, that one which refer to cases, deaths and tests statistic measures.</p>
     </div>
 
     <pre class="usage"><span class='va'>covidData</span></pre>
@@ -133,12 +135,48 @@ are measured in tonnes per hectare for seven crops.                TODO</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>a tibble with 143825 observations and 5 variables:</p><ul>
-<li><p><strong>xxxx</strong>: full country name</p></li>
-<li><p><strong>yyyy</strong>: three letter country code</p></li>
-<li><p><strong>zzzz</strong>: year from 1961 to 2018</p></li>
-<li><p><strong>wwww</strong>: one of bananas, barley, beans, cassava, cocoa, maize, peas, potatoes, rice, soybeans, wheat</p></li>
-<li><p><strong>bbbb</strong>: the total yield of the crop, measured in tonnes per hectare</p></li>
+    <p>a data frame with 47116 observations and 43 variables:</p><ul>
+<li><p><strong>iso_code</strong>: country id given by Our World - ISO 3166-1 alpha-3 – three-letter country codes</p></li>
+<li><p><strong>continent</strong>: the name of continent Continent of the geographical location</p></li>
+<li><p><strong>location</strong>: country's name</p></li>
+<li><p><strong>date</strong>: date of observation from the statistic measure (cases, deaths, tests...)</p></li>
+<li><p><strong>total_cases</strong>: the accumulated total confirmed cases of COVID-19</p></li>
+<li><p><strong>new_cases</strong>: the daily new positive confirmed cases of COVID-19</p></li>
+<li><p><strong>new_cases_smoothed</strong>: the daily new confirmed cases of COVID-19 (7-day smoothed)</p></li>
+<li><p><strong>total_deaths</strong>: total deaths attributed to COVID-19</p></li>
+<li><p><strong>new_deaths</strong>: new deaths attributed to COVID-19</p></li>
+<li><p><strong>new_deaths_smoothed</strong>: new deaths attributed to COVID-19 (7-day smoothed)</p></li>
+<li><p><strong>total_cases_per_million</strong>: the daily positive COVID-19 new cases recorded in the date of the line</p></li>
+<li><p><strong>new_cases_per_million</strong>:	New confirmed cases of COVID-19 per 1,000,000 people	European Centre for Disease Prevention and Control</p></li>
+<li><p><strong>new_cases_smoothed_per_million</strong>:	New confirmed cases of COVID-19 (7-day smoothed) per 1,000,000 people	European Centre for Disease Prevention and Control</p></li>
+<li><p><strong>total_deaths_per_million</strong>:	Total deaths attributed to COVID-19 per 1,000,000 people	European Centre for Disease Prevention and Control</p></li>
+<li><p><strong>new_deaths_per_million</strong>:	New deaths attributed to COVID-19 per 1,000,000 people	European Centre for Disease Prevention and Control</p></li>
+<li><p><strong>new_deaths_smoothed_per_million</strong>:	New deaths attributed to COVID-19 (7-day smoothed) per 1,000,000 people	European Centre for Disease Prevention and Control</p></li>
+<li><p><strong>total_tests</strong>:	Total tests for COVID-19	National government reports</p></li>
+<li><p><strong>new_tests</strong>:	New tests for COVID-19	National government reports</p></li>
+<li><p><strong>new_tests_smoothed</strong>:	New tests for COVID-19 (7-day smoothed). For countries that don't report testing data on a daily basis, we assume that testing changed equally on a daily basis over any periods in which no data was reported. This produces a complete series of daily figures, which is then averaged over a rolling 7-day window	National government reports</p></li>
+<li><p><strong>total_tests_per_thousand</strong>:	Total tests for COVID-19 per 1,000 people	National government reports</p></li>
+<li><p><strong>new_tests_per_thousand</strong>:	New tests for COVID-19 per 1,000 people	National government reports</p></li>
+<li><p><strong>new_tests_smoothed_per_thousand</strong>:	New tests for COVID-19 (7-day smoothed) per 1,000 people	National government reports</p></li>
+<li><p><strong>tests_per_case</strong>:	Tests conducted per new confirmed case of COVID-19, given as a rolling 7-day average (this is the inverse of positive_rate)	National government reports</p></li>
+<li><p><strong>positive_rate</strong>:	The share of COVID-19 tests that are positive, given as a rolling 7-day average (this is the inverse of tests_per_case)	National government reports</p></li>
+<li><p><strong>tests_units</strong>:	Units used by the location to report its testing data	National government reports</p></li>
+<li><p><strong>stringency_index</strong>:	Government Response Stringency Index: composite measure based on 9 response indicators including school closures, workplace closures, and travel bans, rescaled to a value from 0 to 100 (100 = strictest response)	Oxford COVID-19 Government Response Tracker, Blavatnik School of Government</p></li>
+<li><p><strong>population</strong>:	Population in 2020	United Nations, Department of Economic and Social Affairs, Population Division, World Population Prospects: The 2019 Revision</p></li>
+<li><p><strong>population_density</strong>:	Number of people divided by land area, measured in square kilometers, most recent year available	World Bank – World Development Indicators, sourced from Food and Agriculture Organization and World Bank estimates</p></li>
+<li><p><strong>median_age</strong>:	Median age of the population, UN projection for 2020	UN Population Division, World Population Prospects, 2017 Revision</p></li>
+<li><p><strong>aged_65_older</strong>:	Share of the population that is 65 years and older, most recent year available	World Bank – World Development Indicators, based on age/sex distributions of United Nations Population Division's World Population Prospects: 2017 Revision</p></li>
+<li><p><strong>aged_70_older</strong>:	Share of the population that is 70 years and older in 2015	United Nations, Department of Economic and Social Affairs, Population Division (2017), World Population Prospects: The 2017 Revision</p></li>
+<li><p><strong>gdp_per_capita</strong>:	Gross domestic product at purchasing power parity (constant 2011 international dollars), most recent year available	World Bank – World Development Indicators, source from World Bank, International Comparison Program database</p></li>
+<li><p><strong>extreme_poverty</strong>:	Share of the population living in extreme poverty, most recent year available since 2010	World Bank – World Development Indicators, sourced from World Bank Development Research Group</p></li>
+<li><p><strong>cardiovasc_death_rate</strong>:	Death rate from cardiovascular disease in 2017 (annual number of deaths per 100,000 people)	Global Burden of Disease Collaborative Network, Global Burden of Disease Study 2017 Results</p></li>
+<li><p><strong>diabetes_prevalence</strong>:	Diabetes prevalence (% of population aged 20 to 79) in 2017	World Bank – World Development Indicators, sourced from International Diabetes Federation, Diabetes Atlas</p></li>
+<li><p><strong>female_smokers</strong>:	Share of women who smoke, most recent year available	World Bank – World Development Indicators, sourced from World Health Organization, Global Health Observatory Data Repository</p></li>
+<li><p><strong>male_smokers</strong>:	Share of men who smoke, most recent year available	World Bank – World Development Indicators, sourced from World Health Organization, Global Health Observatory Data Repository</p></li>
+<li><p><strong>handwashing_facilities</strong>:	Share of the population with basic handwashing facilities on premises, most recent year available	United Nations Statistics Division</p></li>
+<li><p><strong>hospital_beds_per_thousand</strong>:	Hospital beds per 1,000 people, most recent year available since 2010	OECD, Eurostat, World Bank, national government records and other sources</p></li>
+<li><p><strong>life_expectancy</strong>:	Life expectancy at birth in 2019	James C. Riley, Clio Infra, United Nations Population Division</p></li>
+<li><p><strong>human_development_index</strong>:	Summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living#'</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>

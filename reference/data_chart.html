@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Data processing for charts — data_chart" />
-<meta property="og:description" content="Data processing for charts" />
+<meta property="og:description" content="This function prepares the dataset with some filters, groupings and summarizing to be used into plotting codes." />
 
 
 
@@ -123,7 +123,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Data processing for charts</p>
+    <p>This function prepares the dataset with some filters, groupings and summarizing to be used into plotting codes.</p>
     </div>
 
     <pre class="usage"><span class='fu'>data_chart</span><span class='op'>(</span>dataset <span class='op'>=</span> <span class='va'>covidData</span>, <span class='va'>group_byparameter</span><span class='op'>)</span></pre>
@@ -137,7 +137,7 @@
     </tr>
     <tr>
       <th>group_byparameter</th>
-      <td><p>This is the 1st parameter of groupby() function</p></td>
+      <td><p>This is the column of the dataset to be used inside of groupby() function together with the column "Date"</p></td>
     </tr>
     </table>
 
@@ -145,6 +145,24 @@
 
     <p>The dataset processed to be used to plot the chart</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>data_chart</span><span class='op'>(</span>dataset<span class='op'>=</span><span class='va'>covidData</span>, group_byparameter<span class='op'>=</span><span class='st'>"location"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 44,326 x 8</span><span>
+#&gt;    Date       location `Cumulative Cas… `Cumulative Dea… `Daily Cases`
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>         </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> 2020-02-01 Afghani…                0                0             0
+#&gt; </span><span style='color: #555555;'> 2</span><span> 2020-02-01 Algeria                 0                0             0
+#&gt; </span><span style='color: #555555;'> 3</span><span> 2020-02-01 Armenia                 0                0             0
+#&gt; </span><span style='color: #555555;'> 4</span><span> 2020-02-01 Austral…                9                0             2
+#&gt; </span><span style='color: #555555;'> 5</span><span> 2020-02-01 Austria                 0                0             0
+#&gt; </span><span style='color: #555555;'> 6</span><span> 2020-02-01 Azerbai…                0                0             0
+#&gt; </span><span style='color: #555555;'> 7</span><span> 2020-02-01 Bahrain                 0                0             0
+#&gt; </span><span style='color: #555555;'> 8</span><span> 2020-02-01 Belarus                 0                0             0
+#&gt; </span><span style='color: #555555;'> 9</span><span> 2020-02-01 Belgium                 0                0             0
+#&gt; </span><span style='color: #555555;'>10</span><span> 2020-02-01 Brazil                  0                0             0
+#&gt; </span><span style='color: #555555;'># … with 44,316 more rows, and 3 more variables: `Daily Cases smoothed` </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   `Daily Deaths` </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>, `Daily Deaths smoothed` </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
