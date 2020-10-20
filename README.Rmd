@@ -19,9 +19,9 @@ knitr::opts_chunk$set(
 [![R build status](https://github.com/etc5523-2020/r-package-assessment-prigrecov/workflows/R-CMD-check/badge.svg)](https://github.com/etc5523-2020/r-package-assessment-prigrecov/actions)
 <!-- badges: end -->
 
-The goal of `shinyCovidWorld` package is embedding a Shiny application dashboard about COVID-19 world data exploration and visualization analysis. It makes it lauching the application via a function exported by the own package. 
+The goal of `shinyCovidWorld` package is embedding a Shiny application dashboard about COVID-19 world data exploration and visualization analysis. It makes it launching the application via a function exported by the own package. 
 
-This embedded dashboard was previously created as an assessment product while cursing the "ETC5523 - Communicating with Data" unit of Master in Data Science course at Monash University. The `shinyCovidWorld` package also refactor some parts of the application logic into R functions exported by the package, improving the logic of the shiny application.
+This embedded dashboard was previously created as an assessment product while cursing the "ETC5523 - Communicating with Data" unit of Master in Data Science course at Monash University. The `shinyCovidWorld` package also refactors some parts of the application logic into R functions exported by the package, improving the logic of the shiny application.
 
 As an overview, the main components of this package are one dataset and three functions as follows:
 
@@ -38,10 +38,10 @@ For more detailed instructions on how to use the package and the functions conta
 ### The Shiny Application - **COVID-19 Across The World** dashboard
 The Shiny App aims to provide an overview analysis of the Novel Coronavirus pandemic across the world using some interactive graphs and tables as visualization tools for this, which were built using the Shiny framework in R.
 
-For more details and information about the content and how the dashoboard application works go to the pkgdown website: [shinyCovidWorld](https://etc5523-2020.github.io/r-package-assessment-prigrecov/).  
+For more details and information about the content and how the dashboard application application works go to the pkgdown website: [shinyCovidWorld](https://etc5523-2020.github.io/r-package-assessment-prigrecov/).  
 
 
-## Installation of `shinyCovidWorld` package
+## Installation
 
 The development version of this `shinyCovidWorld` package can be installed from [GitHub](https://github.com/) with:
 
@@ -52,7 +52,7 @@ devtools::install_github("etc5523-2020/r-package-assessment-prigrecov")
 
 ## Get Started
 
-This is a basic example of how to run this package:
+It is a basic example of how to run this package:
 
 ```
 library(shinyCovidWorld)
