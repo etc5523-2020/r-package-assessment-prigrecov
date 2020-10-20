@@ -62,7 +62,7 @@ installed from [GitHub](https://github.com/) with:
 devtools::install_github("etc5523-2020/r-package-assessment-prigrecov")
 ```
 
-## Get Started
+## Usage
 
 It is a basic example of how to run this package:
 
