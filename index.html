@@ -80,21 +80,75 @@
 <a href="#shinycovidworld" class="anchor"></a>shinyCovidWorld</h1></div>
 <!-- badges: start -->
 
-<p>The goal of shinyCovidWorld is to embedding a Shiny application about COVID-19 world data and its analysis.</p>
-<div id="installation" class="section level2">
+<p>The goal of <code>shinyCovidWorld</code> package is embedding a Shiny application dashboard about COVID-19 world data exploration and visualization analysis. It makes it lauching the application via a function exported by the own package.</p>
+<p>This embedded dashboard was previously created as an assessment product while cursing the “ETC5523 - Communicating with Data” unit of Master in Data Science course at Monash University. The <code>shinyCovidWorld</code> package also refactor some parts of the application logic into R functions exported by the package, improving the logic of the shiny application.</p>
+<p>As an overview, the main components of this package are one dataset and three functions as follows:</p>
+<ul>
+<li>Data:
+<ul>
+<li>
+<code>covidData</code> –&gt; dataset with the COVID-19 cases, deaths, tests, positive rate, and other social and economic variables for each country across the world.</li>
+</ul>
+</li>
+<li>Functions:
+<ul>
+<li>
+<code>launch_app</code> –&gt; function that runs the <code>shinyCovidWorld</code> application.</li>
+<li>
+<code><a href="reference/data_chart.html">data_chart()</a></code> –&gt; function that pre-process this dataset executing some filterings, groupings and summarizings, to be used into plotting codes of this application.</li>
+<li>
+<code><a href="reference/text_box.html">text_box()</a></code> –&gt; function that creates a box with a text instruction inside (the argument function) it in the superior panel of the each navigation tab of the dashboard application.</li>
+</ul>
+</li>
+</ul>
+<p>For more detailed instructions on how to use the package and the functions contained within it access the pkgdown website: <a href="https://etc5523-2020.github.io/r-package-assessment-prigrecov/">shinyCovidWorld</a>.</p>
+<div id="the-shiny-application---covid-19-across-the-world-dashboard" class="section level3">
+<h3 class="hasAnchor">
+<a href="#the-shiny-application---covid-19-across-the-world-dashboard" class="anchor"></a>The Shiny Application - <strong>COVID-19 Across The World</strong> dashboard</h3>
+<p>The Shiny App aims to provide an overview analysis of the Novel Coronavirus pandemic across the world using some interactive graphs and tables as visualization tools for this, which were built using the Shiny framework in R.</p>
+<p>For more details and information about the content and how the dashoboard application works go to the pkgdown website: <a href="https://etc5523-2020.github.io/r-package-assessment-prigrecov/">shinyCovidWorld</a>.</p>
+</div>
+<div id="installation-of-shinycovidworld-package" class="section level2">
 <h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>The development version can be installed from from <a href="https://github.com/">GitHub</a> with:</p>
+<a href="#installation-of-shinycovidworld-package" class="anchor"></a>Installation of <code>shinyCovidWorld</code> package</h2>
+<p>The development version of this <code>shinyCovidWorld</code> package can be installed from <a href="https://github.com/">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"etc5523-2020/r-package-assessment-prigrecov"</span><span class="op">)</span></pre></div>
 </div>
-<div id="example" class="section level2">
+<div id="get-started" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example of how to install this package:</p>
+<a href="#get-started" class="anchor"></a>Get Started</h2>
+<p>This is a basic example of how to run this package:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">library</span>(shinyCovidWorld)</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="kw">launch_app</span>()</span></code></pre></div>
+</div>
+<div id="examples" class="section level2">
+<h2 class="hasAnchor">
+<a href="#examples" class="anchor"></a>Examples</h2>
+<ol>
+<li>When you finish the installation, this is the first dashboard page that will be displayed in your screen:</li>
+</ol>
+<p><img src="images/covidDashfig.png" width="100%" style="display: block; margin: auto auto auto 0;"></p>
+<p><em>Image from 1st page of COVID-19 Dashboard</em></p>
+<p><br></p>
+<ol>
+<li>Below displays a sample of first rows and columns of the dataset embedded in this package:</li>
+</ol>
+<!-- end list --><div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">shinyCovidWorld</span><span class="op">)</span>
+<span class="va">covidData</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span>,<span class="fl">2</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span> 
+<span class="co">#&gt;        continent location       date total_cases new_cases new_cases_smoothed</span>
+<span class="co">#&gt; 1  North America    Aruba 2020-03-13           2         2                 NA</span>
+<span class="co">#&gt; 2  North America    Aruba 2020-03-19          NA        NA              0.286</span>
+<span class="co">#&gt; 3  North America    Aruba 2020-03-20           4         2              0.286</span>
+<span class="co">#&gt; 4  North America    Aruba 2020-03-21          NA        NA              0.286</span>
+<span class="co">#&gt; 5  North America    Aruba 2020-03-22          NA        NA              0.286</span>
+<span class="co">#&gt; 6  North America    Aruba 2020-03-23          NA        NA              0.286</span>
+<span class="co">#&gt; 7  North America    Aruba 2020-03-24          12         8              1.429</span>
+<span class="co">#&gt; 8  North America    Aruba 2020-03-25          17         5              2.143</span>
+<span class="co">#&gt; 9  North America    Aruba 2020-03-26          19         2              2.429</span>
+<span class="co">#&gt; 10 North America    Aruba 2020-03-27          28         9              3.429</span></pre></div>
 </div>
 </div>
   </div>
