@@ -9,11 +9,15 @@ data_chart(dataset = covidData, group_byparameter)
 \arguments{
 \item{dataset}{This is the dataset to be processed}
 
-\item{group_byparameter}{This is the 1st parameter of groupby() function}
+\item{group_byparameter}{This is the column of the dataset to be used inside of groupby() function together with the column "Date"}
 }
 \value{
 The dataset processed to be used to plot the chart
 }
 \description{
-Data processing for charts
+This function prepares the dataset with some filters, groupings and summarizing to be used into plotting codes.
+}
+\examples{
+data_chart(dataset=covidData, group_byparameter="location")
+
 }

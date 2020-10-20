@@ -3,15 +3,51 @@
 \docType{data}
 \name{covidData}
 \alias{covidData}
-\title{Our World in Data's Covid Data}
+\title{Our World in Data's COVID-19 dataset}
 \format{
-a tibble with 143825 observations and 5 variables:
+a data frame with 47116 observations and 43 variables:
 \itemize{
-\item \strong{xxxx}: full country name
-\item \strong{yyyy}: three letter country code
-\item \strong{zzzz}: year from 1961 to 2018
-\item \strong{wwww}: one of bananas, barley, beans, cassava, cocoa, maize, peas, potatoes, rice, soybeans, wheat
-\item \strong{bbbb}: the total yield of the crop, measured in tonnes per hectare
+\item \strong{iso_code}: country id given by Our World - ISO 3166-1 alpha-3 – three-letter country codes
+\item \strong{continent}: the name of continent Continent of the geographical location
+\item \strong{location}: country's name
+\item \strong{date}: date of observation from the statistic measure (cases, deaths, tests...)
+\item \strong{total_cases}: the accumulated total confirmed cases of COVID-19
+\item \strong{new_cases}: the daily new positive confirmed cases of COVID-19
+\item \strong{new_cases_smoothed}: the daily new confirmed cases of COVID-19 (7-day smoothed)
+\item \strong{total_deaths}: total deaths attributed to COVID-19
+\item \strong{new_deaths}: new deaths attributed to COVID-19
+\item \strong{new_deaths_smoothed}: new deaths attributed to COVID-19 (7-day smoothed)
+\item \strong{total_cases_per_million}: the daily positive COVID-19 new cases recorded in the date of the line
+\item \strong{new_cases_per_million}:	New confirmed cases of COVID-19 per 1,000,000 people	European Centre for Disease Prevention and Control
+\item \strong{new_cases_smoothed_per_million}:	New confirmed cases of COVID-19 (7-day smoothed) per 1,000,000 people	European Centre for Disease Prevention and Control
+\item \strong{total_deaths_per_million}:	Total deaths attributed to COVID-19 per 1,000,000 people	European Centre for Disease Prevention and Control
+\item \strong{new_deaths_per_million}:	New deaths attributed to COVID-19 per 1,000,000 people	European Centre for Disease Prevention and Control
+\item \strong{new_deaths_smoothed_per_million}:	New deaths attributed to COVID-19 (7-day smoothed) per 1,000,000 people	European Centre for Disease Prevention and Control
+\item \strong{total_tests}:	Total tests for COVID-19	National government reports
+\item \strong{new_tests}:	New tests for COVID-19	National government reports
+\item \strong{new_tests_smoothed}:	New tests for COVID-19 (7-day smoothed). For countries that don't report testing data on a daily basis, we assume that testing changed equally on a daily basis over any periods in which no data was reported. This produces a complete series of daily figures, which is then averaged over a rolling 7-day window	National government reports
+\item \strong{total_tests_per_thousand}:	Total tests for COVID-19 per 1,000 people	National government reports
+\item \strong{new_tests_per_thousand}:	New tests for COVID-19 per 1,000 people	National government reports
+\item \strong{new_tests_smoothed_per_thousand}:	New tests for COVID-19 (7-day smoothed) per 1,000 people	National government reports
+\item \strong{tests_per_case}:	Tests conducted per new confirmed case of COVID-19, given as a rolling 7-day average (this is the inverse of positive_rate)	National government reports
+\item \strong{positive_rate}:	The share of COVID-19 tests that are positive, given as a rolling 7-day average (this is the inverse of tests_per_case)	National government reports
+\item \strong{tests_units}:	Units used by the location to report its testing data	National government reports
+\item \strong{stringency_index}:	Government Response Stringency Index: composite measure based on 9 response indicators including school closures, workplace closures, and travel bans, rescaled to a value from 0 to 100 (100 = strictest response)	Oxford COVID-19 Government Response Tracker, Blavatnik School of Government
+\item \strong{population}:	Population in 2020	United Nations, Department of Economic and Social Affairs, Population Division, World Population Prospects: The 2019 Revision
+\item \strong{population_density}:	Number of people divided by land area, measured in square kilometers, most recent year available	World Bank – World Development Indicators, sourced from Food and Agriculture Organization and World Bank estimates
+\item \strong{median_age}:	Median age of the population, UN projection for 2020	UN Population Division, World Population Prospects, 2017 Revision
+\item \strong{aged_65_older}:	Share of the population that is 65 years and older, most recent year available	World Bank – World Development Indicators, based on age/sex distributions of United Nations Population Division's World Population Prospects: 2017 Revision
+\item \strong{aged_70_older}:	Share of the population that is 70 years and older in 2015	United Nations, Department of Economic and Social Affairs, Population Division (2017), World Population Prospects: The 2017 Revision
+\item \strong{gdp_per_capita}:	Gross domestic product at purchasing power parity (constant 2011 international dollars), most recent year available	World Bank – World Development Indicators, source from World Bank, International Comparison Program database
+\item \strong{extreme_poverty}:	Share of the population living in extreme poverty, most recent year available since 2010	World Bank – World Development Indicators, sourced from World Bank Development Research Group
+\item \strong{cardiovasc_death_rate}:	Death rate from cardiovascular disease in 2017 (annual number of deaths per 100,000 people)	Global Burden of Disease Collaborative Network, Global Burden of Disease Study 2017 Results
+\item \strong{diabetes_prevalence}:	Diabetes prevalence (\% of population aged 20 to 79) in 2017	World Bank – World Development Indicators, sourced from International Diabetes Federation, Diabetes Atlas
+\item \strong{female_smokers}:	Share of women who smoke, most recent year available	World Bank – World Development Indicators, sourced from World Health Organization, Global Health Observatory Data Repository
+\item \strong{male_smokers}:	Share of men who smoke, most recent year available	World Bank – World Development Indicators, sourced from World Health Organization, Global Health Observatory Data Repository
+\item \strong{handwashing_facilities}:	Share of the population with basic handwashing facilities on premises, most recent year available	United Nations Statistics Division
+\item \strong{hospital_beds_per_thousand}:	Hospital beds per 1,000 people, most recent year available since 2010	OECD, Eurostat, World Bank, national government records and other sources
+\item \strong{life_expectancy}:	Life expectancy at birth in 2019	James C. Riley, Clio Infra, United Nations Population Division
+\item \strong{human_development_index}:	Summary measure of average achievement in key dimensions of human development: a long and healthy life, being knowledgeable and have a decent standard of living#'
 }
 }
 \source{
@@ -21,7 +57,8 @@ a tibble with 143825 observations and 5 variables:
 covidData
 }
 \description{
-A dataset containing crop yields for countries over time. Yields   TODO
-are measured in tonnes per hectare for seven crops.                TODO
+A dataset containing  a collection of the COVID-19 data maintained by Our World in Data.
+It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other variables of potential interest.
+Despite of all variables avaible in this dataset, we are using only some one of them for the COVID-19 dashboard, that one which refer to cases, deaths and tests statistic measures.
 }
 \keyword{datasets}

@@ -1,11 +1,16 @@
 #' Data processing for charts
+#' 
+#' @description This function prepares the dataset with some filters, groupings and summarizing to be used into plotting codes.
 #'
 #' @param dataset This is the dataset to be processed
-#' @param group_byparameter This is the 1st parameter of groupby() function
+#' @param group_byparameter This is the column of the dataset to be used inside of groupby() function together with the column "Date"
 #'
 #' @return The dataset processed to be used to plot the chart 
 #'
 #' @import dplyr
+#' 
+#' @examples 
+#' data_chart(dataset=covidData, group_byparameter="location")
 #' 
 #' @export
 data_chart <- function(dataset=covidData, group_byparameter) {
