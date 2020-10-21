@@ -7,17 +7,17 @@
 \format{
 A data frame with 47,116 observations and 43 variables:
 \itemize{
-\item \strong{iso_code}: country id given by Our World - ISO 3166-1 alpha-3 – three-letter country codes
-\item \strong{continent}: the name of continent Continent of the geographical location
-\item \strong{location}: country's name
-\item \strong{date}: date of observation from the statistic measure (cases, deaths, tests...)
-\item \strong{total_cases}: the accumulated total confirmed cases of COVID-19
-\item \strong{new_cases}: the daily new positive confirmed cases of COVID-19
-\item \strong{new_cases_smoothed}: the daily new confirmed cases of COVID-19 (7-day smoothed)
-\item \strong{total_deaths}: total deaths attributed to COVID-19
-\item \strong{new_deaths}: new deaths attributed to COVID-19
-\item \strong{new_deaths_smoothed}: new deaths attributed to COVID-19 (7-day smoothed)
-\item \strong{total_cases_per_million}: the daily positive COVID-19 new cases recorded in the date of the line
+\item \strong{iso_code}: Country id given by Our World - ISO 3166-1 alpha-3 – three-letter country codes
+\item \strong{continent}: Name of Continent of the geographical location
+\item \strong{location}: Country's name
+\item \strong{date}: Date of observation from the statistic measure (cases, deaths, tests...)
+\item \strong{total_cases}: Accumulated total confirmed cases of COVID-19
+\item \strong{new_cases}: Daily new positive confirmed cases of COVID-19
+\item \strong{new_cases_smoothed}: Daily new confirmed cases of COVID-19 (7-day smoothed)
+\item \strong{total_deaths}: Total deaths attributed to COVID-19
+\item \strong{new_deaths}: New deaths attributed to COVID-19
+\item \strong{new_deaths_smoothed}: New deaths attributed to COVID-19 (7-day smoothed)
+\item \strong{total_cases_per_million}: Daily positive COVID-19 new cases recorded in the date of the line
 \item \strong{new_cases_per_million}:	New confirmed cases of COVID-19 per 1,000,000 people	European Centre for Disease Prevention and Control
 \item \strong{new_cases_smoothed_per_million}:	New confirmed cases of COVID-19 (7-day smoothed) per 1,000,000 people	European Centre for Disease Prevention and Control
 \item \strong{total_deaths_per_million}:	Total deaths attributed to COVID-19 per 1,000,000 people	European Centre for Disease Prevention and Control

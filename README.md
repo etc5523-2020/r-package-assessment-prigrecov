@@ -28,7 +28,7 @@ three functions as follows:
         positive rate, and other social and economic variables for each
         country across the world.
   - Functions:
-      - `launch_app` –\> function that runs the `shinyCovidWorld`
+      - `launch_app()` –\> function that runs the `shinyCovidWorld`
         application.
       - `data_chart()` –\> function that pre-process this dataset
         executing some filterings, groupings and summarizings, to be
