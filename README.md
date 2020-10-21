@@ -49,7 +49,7 @@ tables as visualization tools for this, which were built using the Shiny
 framework in R.
 
 For more details and information about the content and how the dashboard
-application application works go to the pkgdown website:
+application works go to the pkgdown website:
 [shinyCovidWorld](https://etc5523-2020.github.io/r-package-assessment-prigrecov/).
 
 ## Installation
@@ -71,18 +71,18 @@ It is a basic example of how to run this package:
 
 ## Examples
 
-1.  When you finish the installation, this is the first dashboard page
-    that will be displayed in your
+  - 1)  When you finish the installation, this is the first dashboard
+        page that will be displayed in your
 screen:
 
 <img src="man/figures/covidDashfig.png" width="100%" style="display: block; margin: auto auto auto 0;" />
 
-*Image from 1st page of COVID-19 Dashboard*
+*\# Image from 1st page of COVID-19 Dashboard*
 
 <br>
 
-2.  Below displays a sample of first rows and columns of the dataset
-    embedded in this package:
+  - 2)  Below is displayed a sample of first rows and columns of the
+        dataset embedded in this package:
 
 <!-- end list -->
 

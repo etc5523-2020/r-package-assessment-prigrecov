@@ -16,8 +16,7 @@ Depends:
     R (>= 2.10),
 Suggests: 
     rmarkdown,
-    testthat,
-    stringi
+    testthat
 VignetteBuilder: knitr
 Imports: 
     shiny,
@@ -32,4 +31,5 @@ Imports:
     kableExtra,
     ggridges,
     viridis,
-    shinydashboard
+    shinydashboard,
+    stringi
