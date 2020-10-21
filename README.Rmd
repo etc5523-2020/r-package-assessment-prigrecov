@@ -65,7 +65,7 @@ launch_app()
 
 ```{r external-image, echo=FALSE, out.width='100%', fig.align='left'}
 # adding the figure from COVID-19 Dashboard
-knitr::include_graphics("images/covidDashfig.png")
+knitr::include_graphics("man/figures/covidDashfig.png")
 ```
 
 *Image from 1st page of COVID-19 Dashboard*

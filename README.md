@@ -75,7 +75,7 @@ It is a basic example of how to run this package:
     that will be displayed in your
 screen:
 
-<img src="images/covidDashfig.png" width="100%" style="display: block; margin: auto auto auto 0;" />
+<img src="man/figures/covidDashfig.png" width="100%" style="display: block; margin: auto auto auto 0;" />
 
 *Image from 1st page of COVID-19 Dashboard*
 
