@@ -2,9 +2,9 @@
 #'
 #' A dataset containing a collection of the COVID-19 data maintained by Our World in Data.  
 #'  
-#' It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other social and economic variables of potential interest, for all countries across the world.
+#' It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other social and economic variables of potential interest, for all 210 countries across the world.
 #'
-#' @format a data frame with 47116 observations and 43 variables:
+#' @format A data frame with 47,116 observations and 43 variables:
 #'
 #' - **iso_code**: country id given by Our World - ISO 3166-1 alpha-3 – three-letter country codes
 #' - **continent**: the name of continent Continent of the geographical location

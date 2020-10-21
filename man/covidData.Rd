@@ -5,7 +5,7 @@
 \alias{covidData}
 \title{Our World in Data's COVID-19 dataset}
 \format{
-a data frame with 47116 observations and 43 variables:
+A data frame with 47,116 observations and 43 variables:
 \itemize{
 \item \strong{iso_code}: country id given by Our World - ISO 3166-1 alpha-3 – three-letter country codes
 \item \strong{continent}: the name of continent Continent of the geographical location
@@ -59,6 +59,6 @@ covidData
 \description{
 A dataset containing a collection of the COVID-19 data maintained by Our World in Data.
 
-It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other social and economic variables of potential interest, for all countries across the world.
+It is updated daily and includes data on confirmed cases, deaths, and testing, as well as other social and economic variables of potential interest, for all 210 countries across the world.
 }
 \keyword{datasets}

@@ -56,7 +56,7 @@ The **COVID-19 Across The World** provides an overview analysis of the evolution
 
 The raw input data used for this application are retrieved from this [GitHub repo](https://github.com/owid/covid-19-data/tree/master/public/data). The ["Our World in Data"](https://ourworldindata.org) is the organization that maintains this data, which is updated daily and includes data on confirmed cases, deaths, and testing, as well as other social and economic variables of potential interest from 210 countries and 6 continents across the world. The analysis period is from the end of December of 2019 up to 30 September 2020.
 
-IInside the app, the user can explore and visualise the total or the daily number of cases and deaths recorded globally, continent by continent or country by country, through interactive graphs and tables which allow a customised data exploration according to the user interest.
+Inside the app, the user can explore and visualise the total or the daily number of cases and deaths recorded globally, continent by continent or country by country, through interactive graphs and tables which allow a customised data exploration according to the user interest.
 
 The APP has two-panel tabs in its navigation bar. The 1st Tab shows the evolution of Covid-19 positive cases and deaths globally. The 2nd Tab progresses detailing the data by continent and by country, comparing the development of COVID-19 cases and deaths, in a daily and accumulated basis, through the six continents and 210 countries. The interactive graphs and tables allow updating the data and views according to the user’s selection (by shiny interaction options tools), permitting a customised data exploration as the reader interest.
 
