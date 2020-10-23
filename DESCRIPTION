@@ -1,7 +1,7 @@
 Package: shinyCovidWorld
 Title: Shiny Covid-19 Application Launching
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R:
     person(given = "Priscila",
            family = "Grecov",
            role = c("aut", "cre"),
@@ -12,13 +12,13 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Depends: 
-    R (>= 2.10)
-Suggests: 
+Depends:
+    R (>= 2.10),
+Suggests:
     rmarkdown,
     testthat
 VignetteBuilder: knitr
-Imports: 
+Imports:
     shiny,
     tidyverse,
     plotly,
