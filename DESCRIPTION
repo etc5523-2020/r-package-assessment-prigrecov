@@ -1,16 +1,34 @@
-Package: yourPkg
-Title: What the Package Does (One Line, Title Case)
+Package: shinyCovidWorld
+Title: Shiny Covid-19 Application Launching
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
+Authors@R:
+    person(given = "Priscila",
+           family = "Grecov",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+           email = "pgre0007@student.monash.edu")
+Description: This package launches a Shiny dashboard application that contains the data visualisation and exploration of global COVID-19 pandemic data.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Depends:
+    R (>= 2.10),
+Suggests:
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
+Imports:
+    shiny,
+    tidyverse,
+    plotly,
+    dplyr,
+    ggthemes,
+    ggplot2,
+    scales,
+    DT,
+    knitr,
+    kableExtra,
+    ggridges,
+    viridis,
+    shinydashboard
