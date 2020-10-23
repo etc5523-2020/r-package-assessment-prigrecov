@@ -88,8 +88,8 @@ function(input, output, session) {
     output$plot1 <- renderPlotly({
         graph_world1 <- data1 %>%
             plot_ly() %>%
-            add_bars(x = data1$Date, y = data1$Daily_Cases, name="daily") %>%
-            add_lines(x = data1$Date, y = data1$Cumulative_Cases, yaxis = "y2", name="accumulated") %>%
+            add_bars(x = ~data1$Date, y = ~data1$Daily_Cases, name="daily") %>%
+            add_lines(x = ~data1$Date, y = ~data1$Cumulative_Cases, yaxis = "y2", name="accumulated") %>%
             layout(
                 title = 'Graph 1: Evolution of COVID-19 positive cases in the World', 
                 yaxis2 = list(
@@ -127,8 +127,8 @@ function(input, output, session) {
         output$plot1 <- renderPlotly({
             graph_world1 <- data1 %>%
                 plot_ly() %>%
-                add_bars(x = data1$Date, y = data1$Daily_Cases, name="daily") %>%
-                add_lines(x = data1$Date, y = data1$Cumulative_Cases, yaxis = "y2", name="accumulated") %>%
+                add_bars(x = ~data1$Date, y = ~data1$Daily_Cases, name="daily") %>%
+                add_lines(x = ~data1$Date, y = ~data1$Cumulative_Cases, yaxis = "y2", name="accumulated") %>%
                 layout(
                     title = 'Graph 1: Evolution of COVID-19 positive cases in the World', 
                     yaxis2 = list(
@@ -166,8 +166,8 @@ function(input, output, session) {
         output$plot1 <- renderPlotly({
             graph_world1 <- data1 %>%
                 plot_ly() %>%
-                add_bars(x = data1$Date, y = data1$Daily_Deaths, name="daily") %>%
-                add_lines(x = data1$Date, y = data1$Cumulative_Deaths, yaxis = "y2", name="accumulated") %>%
+                add_bars(x = ~data1$Date, y = ~data1$Daily_Deaths, name="daily") %>%
+                add_lines(x = ~data1$Date, y = ~data1$Cumulative_Deaths, yaxis = "y2", name="accumulated") %>%
                 layout(
                     title = 'Graph 1: Evolution of COVID-19 deaths in the World', 
                     yaxis2 = list(
