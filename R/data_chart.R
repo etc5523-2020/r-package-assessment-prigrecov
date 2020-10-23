@@ -27,7 +27,7 @@ data_chart <- function(dataset=covidData, group_byparameter) {
   )
   
   dataset <- dataset %>%
-    filter(Date >= '2020-02-01') %>%
+    dplyr::filter(Date >= '2020-02-01') %>%
     group_by(Date, get(group_byparameter)) %>%
     summarize(Cumulative_Cases = sum(total_cases),
               Cumulative_Deaths = sum(total_deaths),
